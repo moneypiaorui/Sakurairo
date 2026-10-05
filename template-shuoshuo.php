@@ -149,9 +149,53 @@ body.dark .sakurairo-shuoshuo-page {
 .sakurairo-shuoshuo-body iframe { max-width: 100%; }
 .sakurairo-shuoshuo-body figure { max-width: 100%; margin: 12px 0; }
 .sakurairo-shuoshuo-body pre { max-width: 100%; overflow-x: auto; }
-.sakurairo-shuoshuo-pagination ul.page-numbers { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
-.sakurairo-shuoshuo-pagination a, .sakurairo-shuoshuo-pagination span { display: block; padding: 8px 12px; border-radius: 8px; }
-.sakurairo-shuoshuo-pagination .current { background: var(--ss-accent); color: #fff; }
+.sakurairo-shuoshuo-page .sakurairo-shuoshuo-pagination ul.page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    margin: 28px 0;
+    padding: 0;
+    list-style: none;
+}
+.sakurairo-shuoshuo-page .sakurairo-shuoshuo-pagination ul.page-numbers > li {
+    display: flex;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* Reset the theme's 35px prev/next buttons and comment-pagination spacing. */
+.sakurairo-shuoshuo-page .sakurairo-shuoshuo-pagination a.page-numbers,
+.sakurairo-shuoshuo-page .sakurairo-shuoshuo-pagination span.page-numbers {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    float: none;
+    width: auto;
+    height: auto;
+    min-width: 44px;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px solid var(--ss-border);
+    border-radius: 8px;
+    background: var(--ss-card);
+    color: var(--ss-text);
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.sakurairo-shuoshuo-page .sakurairo-shuoshuo-pagination span.page-numbers.current {
+    border-color: var(--ss-accent);
+    box-shadow: inset 0 0 0 1px var(--ss-accent);
+    font-weight: 700;
+}
+.sakurairo-shuoshuo-pagination a::after { content: none; }
 .sakurairo-shuoshuo-pagination a:focus-visible, .sakurairo-shuoshuo-date:focus-visible { outline: 2px solid var(--ss-accent); outline-offset: 3px; }
 #shuoshuo-timeline { scroll-margin-top: 90px; }
 @media (max-width: 600px) {
